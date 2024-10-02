@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relatório de Adoção de Cães</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.plot.ly/plotly-2.27.0.min.js" charset="utf-8"></script>
+</head>
+<body>
+    <header>
+        <h1>Relatório de Adoção de Cães</h1>
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="#">Estatísticas de Adoção</a>
+        </nav>
+    </header>
+    <main class="graficos-section">
+        <section id="graficos-container" class="graficos-container">
+            <!-- Esse é o container onde o gráfico será inserido -->
+            <div id="grafico" style="width: 100%; height: 500px;"></div> <!-- Adicionando div para o gráfico -->
+        </section>
+    </main>
+    <footer>
+        <p>Desenvolvido por Vinícius Machado</p>
+    </footer>
+    <script type="module" src="graficos/common.js"></script>
+    <script type="module" src="graficos/informacoesGlobais.js"></script>
+    <script type="module" src="graficos/quantidadeUsuarios.js"></script>
+</body>
+</html>

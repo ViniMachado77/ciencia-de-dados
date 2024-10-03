@@ -6,14 +6,19 @@ async function visualizarGraficos() {
         const dados = await res.json();
 
         console.log(dados); 
-        
+
         const racas = dados.slice(0, 5).map(raca => raca.name);
-        const popularidade = racas.map(() => Math.floor(Math.random() * 100) + 1);
+       
+        const anosDeVida = dados.slice(0, 5).map(raca => {
+            const lifeSpan = raca.life_span;
+            const anos = lifeSpan.split(' ')[0];
+            return parseInt(anos);
+        });
 
         const data = [
             {
                 x: racas,
-                y: popularidade,
+                y: anosDeVida,
                 type: 'bar',
                 marker: {
                     color: 'rgba(122, 239, 122, 0.7)',
@@ -22,9 +27,9 @@ async function visualizarGraficos() {
         ];
 
         const layout = {
-            title: 'Popularidade de Adoção das Raças de Cães',
+            title: 'Expectativa de Vida das Raças de Cães',
             xaxis: { title: 'Raças' },
-            yaxis: { title: 'Índice de Adoção' }
+            yaxis: { title: 'Anos de Vida' }
         };
 
         Plotly.newPlot('grafico', data, layout);
@@ -35,3 +40,4 @@ async function visualizarGraficos() {
 }
 
 visualizarGraficos();
+
